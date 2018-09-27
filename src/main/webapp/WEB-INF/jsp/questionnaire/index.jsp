@@ -267,7 +267,7 @@
 								<div class="item_wrap clearfix pr">
 									<span for="" class="icon_select"></span>
 									<div class="item_cont l" >
-										<p class="item_address"><span class="option">C</span>、票面图文的凸起线条拥有更强的手感 
+										<p class="item_address"><span class="option">C</span>、票面图文的凸起线条应有更强的手感 
 										</p>
 									</div>
 								</div>
@@ -678,7 +678,7 @@
 
 									<div class="item_cont l" >
 
-										<p class="item_address"><span class="option">A</span>、应更耐高温 
+										<p class="item_address"><span class="option">A</span>、纸张应更不易破损或变软 
 										</p>
 
 									</div>
@@ -691,8 +691,7 @@
 
 									<div class="item_cont l" >
 
-										<p class="item_address"><span class="option">B</span>、应更耐摩擦
-										</p>
+										<p class="item_address"><span class="option">B</span>、图案应更加美观</p>
 
 									</div>
 
@@ -704,8 +703,7 @@
 
 									<div class="item_cont l" >
 
-										<p class="item_address"><span class="option">C</span>、应更耐揉搓
-										</p>
+										<p class="item_address"><span class="option">C</span>、防伪特征应更易于识别</p>
 
 									</div>
 
@@ -717,7 +715,7 @@
 
 									<div class="item_cont l" >
 
-										<p class="item_address"><span class="option">D</span>、应更耐脏污 
+										<p class="item_address"><span class="option">D</span>、防伪特征项目类型应增加 
 										</p>
 
 									</div>
@@ -731,7 +729,7 @@
 
 									<div class="item_cont l" >
 
-										<p class="item_address"><span class="option">E</span>、很好，不需要改变
+										<p class="item_address"><span class="option">E</span>、不需要改变
 										</p>
 
 									</div>
@@ -1478,11 +1476,10 @@
 					}
 					
 					var answer = "";
-					var error = "";
 					
 					function checkDate(){
 						var error = "";
-						answer += "{"
+						answer = "{"
 						for(var i=1;i<=20;i++){
 							console.log(i);
 							if(i==1){
@@ -1593,7 +1590,11 @@
 						}else if(index == 12){
 							activeOne(that);
 						}else if(index == 13){
-							maxSelect(that,2);
+							if(that.find(".option").html() == "D"){
+								mutexOne(that,"D");
+							}else{
+								maxAndmutexSelect(that,2,"D")
+							}
 						}else if(index == 14){
 							if(that.find(".option").html() == "E"){
 								mutexOne(that,"E");
